@@ -1,25 +1,25 @@
 const books = [
   {
     id: 1,
-    title: "Title 1",
+    title: "Prince of Persia",
     category: "Category 1",
     available: true,
   },
   {
     id: 2,
-    title: "Title 2",
+    title: "Rich Dad Poor Dad",
     category: "Category 2",
     available: true,
   },
   {
     id: 3,
-    title: "Title 3",
+    title: "Helmet",
     category: "Category 3",
     available: true,
   },
   {
     id: 4,
-    title: "Title 4",
+    title: "Potter's Wheel",
     category: "Category 4",
     available: false,
   },
@@ -79,10 +79,25 @@ const showBorrowedBooks = () => {
   }
   return list;
 };
+const showBooksAvailable = () => {
+  let list = [];
+  for (let index = 0; index < books.length; index++) {
+    list.push(books[index].title);
+  }
+  return list;
+};
 
 const borrowBook = () => {
   const id = Number(
-    prompt("Enter Book ID. We have four books in store, with IDs 1,2,3 and 4")
+    prompt(
+      "This is the list of books in store " +
+        "\n" +
+        showBooksAvailable() +
+        "\n" +
+        "with IDs 1,2,3 and 4 respectively" +
+        "\n" +
+        "Enter Book ID to borrow"
+    )
   );
   if (!isAvailable(id)) {
     console.log(
