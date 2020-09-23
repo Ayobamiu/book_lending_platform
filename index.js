@@ -82,7 +82,10 @@ const showBorrowedBooks = () => {
 const showBooksAvailable = () => {
   let list = [];
   for (let index = 0; index < books.length; index++) {
-    list.push(books[index].title);
+    const book = books[index]
+    if (book.available) {
+      list.push(books[index].title);
+    }
   }
   return list;
 };
@@ -145,9 +148,24 @@ const returnBook = () => {
   }
 };
 
-// borrowBook(4);
-// borrowBook(1);
-// returnBook(1);
-// borrowBook(2);
-// borrowBook(3);
-// borrowBook(3);
+const emptyBorrowedBooksList = () => {
+  for (let index = 0; index < borrowedBooks.length; index++) {
+    const book = borrowedBooks[index];
+    borrowedBooks.pop(book);
+  }
+};
+
+module.exports = {
+  getBook,
+  getBookinBorrowedList,
+  isAvailable,
+  addToborrowersList,
+  removeFromborrowersList,
+  markBookAsUnavailable,
+  markBookAsAvailable,
+  showBorrowedBooks,
+  showBooksAvailable,
+  borrowBook,
+  returnBook,
+  emptyBorrowedBooksList,
+};

@@ -1,0 +1,26 @@
+{
+  "name": "fifth_task_book_rental",
+  "version": "1.0.0",
+  "description": "Book rental service",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayobamiu/book_lending_platform.git"
+  },
+  "author": "Usman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayobamiu/book_lending_platform/issues"
+  },
+  "homepage": "https://github.com/Ayobamiu/book_lending_platform#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
